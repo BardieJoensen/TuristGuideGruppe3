@@ -1,0 +1,13 @@
+package com.gruppe3.tourism;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class TouristGuideApiApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
