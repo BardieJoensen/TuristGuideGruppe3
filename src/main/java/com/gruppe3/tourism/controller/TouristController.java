@@ -5,10 +5,7 @@ import com.gruppe3.tourism.service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,15 +15,19 @@ import java.util.List;
 public class TouristController {
     private TouristService service;
 
+    public TouristController(TouristService service) {
+        this.service = service;
+    }
+
 
     @GetMapping()
-    public ResponseEntity<List<TouristAttraction>> getAttractions(){
+    public ResponseEntity<List<TouristAttraction>> getAttractions() {
         List<TouristAttraction> attractions = service.getAttractions();
         return new ResponseEntity<>(attractions, HttpStatus.OK);
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<TouristAttraction> getAttractionsByName(@PathVariable String name){
+    public ResponseEntity<TouristAttraction> getAttractionsByName(@PathVariable String name) {
         TouristAttraction attraction = service.findAttractionByName(name);
         if (name != null) {
             return new ResponseEntity<>(attraction, HttpStatus.OK);
@@ -34,10 +35,29 @@ public class TouristController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    /* @PostMapping("/add")
+    @PostMapping("/add")
+    public ResponseEntity<TouristAttraction> addAttraction(@RequestBody TouristAttraction attraction) {
+        if (attraction.getName() == null || attraction.getDescription() == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>(service.addAttraction(attraction), HttpStatus.CREATED);
+    }
 
     @PostMapping("/update")
+    public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction attraction) {
+        if (attraction.getName() == null || attraction.getDescription() == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
 
-    @PostMapping("/delete/{name}") */
+        attraction = service.updateAttraction(attraction);  
+
+        if (attraction != null) {
+            return new ResponseEntity<>(attraction, HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    //@PostMapping("/delete/{name}")
 
 }

@@ -10,7 +10,7 @@ import java.util.List;
 public class TouristService {
     private final TouristRepository repository;
 
-    public TouristService (TouristRepository repository) {
+    public TouristService(TouristRepository repository) {
         this.repository = repository;
     }
 
@@ -22,7 +22,11 @@ public class TouristService {
         return repository.findAttractionByName(name);
     }
 
-    public TouristAttraction addAttraction (TouristAttraction attraction) {
+    public TouristAttraction addAttraction(TouristAttraction attraction) {
         return repository.addAttraction(attraction);
+    }
+
+    public TouristAttraction updateAttraction(TouristAttraction attraction) {
+        return repository.updateAttraction(attraction);
     }
 }
