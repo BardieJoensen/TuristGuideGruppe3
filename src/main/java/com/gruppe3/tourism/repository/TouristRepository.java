@@ -1,0 +1,42 @@
+package com.gruppe3.tourism.repository;
+
+import com.gruppe3.tourism.model.TouristAttraction;
+import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class TouristRepository {
+    private final List<TouristAttraction> touristAttractions;
+
+    public TouristRepository(){
+        this.touristAttractions = new ArrayList<>();
+        populateAttractions();
+    }
+
+    private void populateAttractions() {
+        touristAttractions.add(new TouristAttraction("Vertigo", "Svingarme drejer rundt hurtigt / Plane goes brrrr "));
+        touristAttractions.add(new TouristAttraction("Hurlumhejhuset", "En hus på Bakken der er skævt tror jeg? "));
+        touristAttractions.add(new TouristAttraction("Rundetårn", "Et firkantet tårn i København eller et noget"));
+        touristAttractions.add(new TouristAttraction("Storkespringvandet","Flamingoer der springer i vand"));
+    }
+
+    public List<TouristAttraction> getAttractions(){
+        return touristAttractions;
+    }
+
+    public TouristAttraction findAttractionByName(String name){
+        for (TouristAttraction touristAttraction : touristAttractions){
+            if (touristAttraction.getName().equalsIgnoreCase(name)){
+                return touristAttraction;
+            }
+        }
+        return null;
+    }
+
+    public TouristAttraction addAttraction(TouristAttraction attraction){
+        touristAttractions.add(attraction);
+        return attraction;
+    }
+}
