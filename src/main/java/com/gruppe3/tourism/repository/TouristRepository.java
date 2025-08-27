@@ -17,8 +17,8 @@ public class TouristRepository {
 
     private void populateAttractions() {
         touristAttractions.add(new TouristAttraction("Vertigo", "Svingarme drejer rundt hurtigt / Plane goes brrrr "));
-        touristAttractions.add(new TouristAttraction("Hurlumhejhuset", "Et hus på Bakken der er skævt tror jeg? "));
-        touristAttractions.add(new TouristAttraction("Rundetårn", "Et firkantet tårn i København eller et noget"));
+        touristAttractions.add(new TouristAttraction("Hurlumhejhuset", "Et hus på Bakken der er skaevt tror jeg? "));
+        touristAttractions.add(new TouristAttraction("Rundetaarn", "Et firkantet taarn i København eller et noget"));
         touristAttractions.add(new TouristAttraction("Storkespringvandet", "Flamingoer der springer i vand"));
     }
 
@@ -45,6 +45,15 @@ public class TouristRepository {
         if (oldAttraction != null) {
             oldAttraction.setDescription(attraction.getDescription());
             return oldAttraction;
+        }
+        return null;
+    }
+
+    public TouristAttraction deleteAttraction(String name) {
+        TouristAttraction attraction = findAttractionByName(name);
+        if (attraction != null) {
+            touristAttractions.remove(attraction);
+            return attraction;
         }
         return null;
     }

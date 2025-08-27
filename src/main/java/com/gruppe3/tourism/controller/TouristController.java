@@ -49,7 +49,7 @@ public class TouristController {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
 
-        attraction = service.updateAttraction(attraction);  
+        attraction = service.updateAttraction(attraction);
 
         if (attraction != null) {
             return new ResponseEntity<>(attraction, HttpStatus.ACCEPTED);
@@ -58,6 +58,18 @@ public class TouristController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    //@PostMapping("/delete/{name}")
+    @PostMapping("/delete/{name}")
+    public ResponseEntity<TouristAttraction> deleteAttraction(@PathVariable String name){
+        if (name == null){
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
 
+        TouristAttraction attraction = service.deleteAttraction(name);
+
+        if (attraction != null) {
+            return new ResponseEntity<>(attraction, HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
