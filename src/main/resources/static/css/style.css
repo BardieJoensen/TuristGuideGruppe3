@@ -19,6 +19,7 @@ body {
     background: url(../images/BG_Klitmøller_Photo_Mette_Johnsen_VisitDenmark.jpg) no-repeat;
     background-size: cover;
     margin: 0;
+    font-family: Arial, Serif, serif;
 }
 
 .content_wrapper {
@@ -34,11 +35,6 @@ body .content_wrapper {
 a {
     text-decoration: none;
 }
-
-p, h1, h2, h3, a {
-    font-family: Arial, Serif, serif;
-}
-
 
 h1, h2 {
     text-align: center;
