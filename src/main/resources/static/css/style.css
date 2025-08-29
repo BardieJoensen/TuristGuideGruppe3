@@ -14,15 +14,39 @@ html, body {
     height: 100%;
 }
 body {
-    background: #f6f6f6;
+    background: url(../images/BG_Klitmøller_Photo_Mette_Johnsen_VisitDenmark.jpg) no-repeat;
+    background-size: cover;
     margin: 0;
 }
+
+body .content_wrapper {
+    background: rgb(255 255 255 / 0.9);
+}
+
+
 
 /* HEADER
 -------------------------------------------- */
 
 /* MAIN
 -------------------------------------------- */
+.block_list {
+    list-style-type: none;
+    padding: 0;
+}
 
+.block_list li{
+    display: inline-block;
+    height: 500px;
+    width: 250px;
+    margin: 20px;
+}
+
+.block_list img {
+    object-fit: cover;
+    object-position: center center;
+    width: 250px;
+    height: 250px;
+}
 /* FOOTER
 -------------------------------------------- */
