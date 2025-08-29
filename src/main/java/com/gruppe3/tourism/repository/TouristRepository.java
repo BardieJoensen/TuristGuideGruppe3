@@ -27,7 +27,14 @@ public class TouristRepository {
                 "Vores professionelle og specialuddannede instruktører vil guide jer til at udfordre egne grænser i sikre rammer.\n" +
                 "\n" +
                 "Et tandemspring er den perfekte anledning til at komme hinanden ved, idet at i fastspændes i hver jeres bodyharness, og tager springet sammen."));
-        touristAttractions.add(new TouristAttraction("Storkespringvandet", "Flamingoer der springer i vand"));
+        touristAttractions.add(new TouristAttraction("BUNGEEJUMPING", "Få et adrenalinsus ud over det sædvanlige med Københavns vildeste oplevelse: bungee jump fra en kran på hele 69 meters højde midt på Refshaleøen. Her får du en unik kombination af fart, frihed og udsigt – du svæver frit med Københavns skyline, havnen og Øresund som baggrund.\n" +
+                "\n" +
+                "Uanset om du er erfaren eventyrer eller førstegangshopper, står professionelle instruktører klar til at guide dig trygt gennem oplevelsen. Alt sikkerhedsudstyr er inkluderet, og du får en oplevelse, der garanteret sætter sig på nethinden for livet.\n" +
+                "\n" +
+                "Perfekt som gave, som en grænseoverskridende udfordring til dig selv – eller som et uforglemmeligt højdepunkt på dit besøg i København.\n" +
+                "\n" +
+                " Er du klar til at tage springet?"));
+
     }
 
     public List<TouristAttraction> getAttractions() {

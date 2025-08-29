@@ -42,16 +42,26 @@ a {
 
 /* MAIN
 -------------------------------------------- */
+main h2 {
+    text-align: center;
+}
+
 .block_list {
     margin: 0 auto;
     list-style-type: none;
     padding: 0;
 }
 
-.block_list li{
-    display: inline-block;
+.center_aligned {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_list li {
+    display: inline-flex;
     height: 500px;
-    width: 250px;
+    width: 300px;
     margin: 20px;
     background: #222222F0;
 }
