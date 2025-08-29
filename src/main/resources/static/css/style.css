@@ -22,7 +22,7 @@ body {
 }
 
 .content_wrapper {
-    margin: 0 auto;
+    margin: 50px auto 0;
     padding: 30px;
     max-width: 1200px;
 }
@@ -35,16 +35,21 @@ a {
     text-decoration: none;
 }
 
+p, h1, h2, h3, a {
+    font-family: Arial, Serif, serif;
+}
+
+
+h1, h2 {
+    text-align: center;
+}
+
 
 /* HEADER
 -------------------------------------------- */
 
-
 /* MAIN
 -------------------------------------------- */
-main h2 {
-    text-align: center;
-}
 
 .block_list {
     margin: 0 auto;
@@ -84,9 +89,7 @@ main .block_list a p, .block_list a h3 {
 footer {
     background: #222222F0;
     color: #FFFFFF;
-    height: 300px;
-}
-
-nav a {
-    border
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
 }
